@@ -1,0 +1,4 @@
+node_modules
+.DS_tore
+.env
+.next

@@ -1,12 +1,12 @@
 import { GraphQLScalarType, Kind } from 'graphql';
 import { ObjectId } from 'mongodb';
 /**
- *
+ * Converts object id to to a string id and reutrns it to the user.
  */
 
 export const ObjectIdScalar = new GraphQLScalarType({
   name: 'ObjectId',
-  description: 'Mongo id scalar type',
+  description: 'Mongo Id convertion',
   parseValue(value: string) {
     return new ObjectId(value); // client from input variable
   },

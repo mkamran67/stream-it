@@ -6,4 +6,16 @@ import { Stream } from '../entity/Stream';
 
 // Partial tells TS these properties are optional
 @InputType()
-export class StreamInput implements Partial<Stream> {}
+export class StreamInput implements Partial<Stream> {
+  @Field({ nullable: true })
+  id?: ObjectId;
+
+  @Field()
+  title: string;
+
+  @Field({ nullable: true })
+  description?: string;
+
+  @Field()
+  url: string;
+}

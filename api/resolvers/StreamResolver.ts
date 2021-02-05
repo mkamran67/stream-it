@@ -15,7 +15,6 @@ import { Stream, StreamModel } from '../entity/Stream';
 import { ObjectIdScalar } from '../schema/object-id.scalar';
 import { StreamInput } from '../types/StreamInput';
 import { isAuth } from '../middleware/isAuth';
-import { UserResponse } from 'types/UserResponse';
 
 @Resolver(() => Stream)
 export class StreamResolver {

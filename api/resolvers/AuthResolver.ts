@@ -21,7 +21,7 @@ export class AuthResolver {
 
     // 2. Create a new user with a hashed password
     const hashedPassword = await bcrypt.hash(password, 10);
-    const user = new UserModel({ email, passowrd: hashedPassword });
+    const user = new UserModel({ email, password: hashedPassword });
     await user.save();
 
     // 3. Store userId on the token payload and return the payload with the user response.

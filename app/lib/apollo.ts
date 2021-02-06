@@ -8,7 +8,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-let apolloCleint: ApolloClient<NormalizedCacheObject> | undefined;
+let apolloClient: ApolloClient<NormalizedCacheObject> | undefined;
 
 function createApolloClient() {
   // Create an authentication link for client
@@ -40,7 +40,22 @@ function createApolloClient() {
 
 // init ApolloClient with context and initial state
 export function initializeApollo(initialState: any = null) {
-  const _apolloClient = apolloCleint ?? createApolloClient();
+  const _apolloClient = apolloClient ?? createApolloClient();
 
-  // grab init state
+  // Initial state gets re-hydrated
+  if (initialState) {
+    _apolloClient.cache.restore(initialState);
+  }
+
+  // for SSR or SSG always create a new Apollo Client
+  if (typeof window === 'undefined') return _apolloClient;
+  // create the apollo client once in the client
+  if (!apolloClient) apolloClient = _apolloClient;
+
+  return _apolloClient;
+}
+
+export function useApollo(initialState: any) {
+  const store = useMemo(() => initializeApollo(initialState), [initialState]);
+  return store;
 }

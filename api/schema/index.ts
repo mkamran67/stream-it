@@ -14,7 +14,7 @@ export default async function createSchema(): Promise<GraphQLSchema> {
   const schema = await buildSchema({
     // 1. add all typescript resolvers
     resolvers: [UserResolver, AuthResolver, StreamResolver],
-    // generates a schema file everytime the server starts - optional
+    // generates a schema file everytime the server starts - optional - used later to auto generate front end mutations and queries
     emitSchemaFile: path.resolve(__dirname, 'schema.gql'),
     // 2. use document converting middleware
     globalMiddlewares: [TypegooseMiddleware],

@@ -47,7 +47,7 @@ async function createServer() {
     // start the apollo server
     app.listen({ port }, () => {
       console.log(
-        `Server running on port ${port} - ApolloServer graphql path ${apolloServer.graphqlPath}`
+        `Server running on port http://localhost:${port}${apolloServer.graphqlPath}`
       );
     });
   } catch (err) {

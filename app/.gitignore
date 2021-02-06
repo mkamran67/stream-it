@@ -2,3 +2,6 @@ node_modules
 .DS_tore
 .env
 .next
+*.graphql.d.ts
+*.graphqls.d.ts
+__generated__

@@ -17,7 +17,7 @@ async function createServer() {
     const app = express();
 
     const corsOptions = {
-      origin: 'https://localhost:8000',
+      origin: 'http://localhost:3000',
       credentials: true,
     };
 

@@ -1,0 +1,27 @@
+{
+  "name": "stream-it",
+  "version": "1.0.0",
+  "description": "### -- Technologies - NPM packages used",
+  "main": "index.js",
+  "private": "true",
+  "scripts": {
+    "build": "yarn workspace @stream-it/app run build",
+    "start": "yarn workspace @stream-it/api run start",
+    "dev": "yarn workspace @stream-it/api run dev"
+  },
+  "workspaces": [
+    "api",
+    "app"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkamran67/stream-it.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mkamran67/stream-it/issues"
+  },
+  "homepage": "https://github.com/mkamran67/stream-it#readme"
+}
